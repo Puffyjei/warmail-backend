@@ -2,8 +2,11 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})  # Permitir cualquier origen
+CORS(app)  # Habilita CORS para todas las rutas
 
+@app.route('/')
+def index():
+    return 'Warmail Backend funcionando'
 
 import psycopg2
 import os
