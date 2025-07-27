@@ -1,4 +1,12 @@
 from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify
+from flask_cors import CORS  # <-- importa esto
+
+app = Flask(__name__)
+CORS(app)  # <-- activa CORS justo después de crear la app
+
+# ... tu código sigue aquí con las rutas como /register, /login, etc.
+
 import psycopg2
 import os
 
